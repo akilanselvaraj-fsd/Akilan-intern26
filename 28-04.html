@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Grid & Flexbox Page</title>
+
+    <style>
+        /* Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f4f4;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* Navigation */
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #333;
+            padding: 15px 20px;
+            border-radius: 10px;
+            margin: 20px;
+            position: relative;
+        }
+
+        .logo {
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+        }
+
+        .nav-links a:hover {
+            color: #4CAF50;
+        }
+
+        /* Hamburger Menu */
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 5px;
+        }
+
+        .menu-toggle span {
+            width: 30px;
+            height: 3px;
+            background: white;
+            border-radius: 5px;
+            display: block;
+        }
+
+        /* Grid Layout */
+        .container {
+            display: grid;
+            grid-template-areas:
+                "header header header"
+                "sidebar main aside"
+                "footer footer footer";
+            grid-template-columns: 1fr 2fr 1fr;
+            gap: 20px;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .header {
+            grid-area: header;
+            background: #4CAF50;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            border-radius: 10px;
+        }
+
+        .sidebar,
+        .main,
+        .aside {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            background-color: aqua;
+        }
+        .sidebar:hover,
+        .main:hover,
+        .aside:hover,
+        .card:hover {
+            transform: translateY(-5px);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .sidebar {
+            grid-area: sidebar;
+        }
+
+        .main {
+            grid-area: main;
+        }
+
+        .aside {
+            grid-area: aside;
+        }
+
+        .footer {
+            grid-area: footer;
+            background: #222;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        /* Typography */
+        h1 {
+            font-size: clamp(1.5rem, 4vw, 3rem);
+            margin-bottom: 10px;
+        }
+
+        h2 {
+            margin-bottom: 15px;
+            color: #4CAF50;
+        }
+
+        p {
+            font-size: clamp(0.875rem, 1.5vw, 1.125rem);
+            margin-bottom: 15px;
+        }
+
+        /* Cards using Flexbox */
+        .cards {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .card {
+            flex: 1;
+            min-width: 200px;
+            background: #e8f5e9;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        /* Responsive Media Query */
+        @media (max-width: 768px) {
+            .container {
+                grid-template-areas:
+                    "header"
+                    "sidebar"
+                    "main"
+                    "aside"
+                    "footer";
+                grid-template-columns: 1fr;
+                color: gray;
+                /* background-image: lightskyblue; */
+            }
+            .container,.h2
+            .aside,.main,.sidebar {
+                background-color: rgb(231, 70, 70);
+            }.h2 {
+                color: white;
+            }
+            .menu-toggle {
+                display: flex;
+            }
+            .header {
+                background: #d7564b;
+            }
+            
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                background: #333;
+                position: absolute;
+                top: 70px;
+                right: 20px;
+                width: 200px;
+                padding: 15px;
+                border-radius: 10px;
+            }
+
+            .nav:hover .nav-links {
+                display: flex;
+            }
+
+            .cards {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation with Hamburger -->
+    <div class="nav">
+        <div class="logo">My Website</div>
+
+        <div class="menu-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <div class="nav-links">
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Services</a>
+            <a href="#">Contact</a>
+        </div>
+    </div>
+
+    <!-- Grid Layout -->
+    <div class="container">
+
+        <header class="header">
+            <h1>Responsive Web Page</h1>
+            <p>Using Grid Layout, Flexbox, Typography, Display Property & Media Query</p>
+        </header>
+
+        <aside class="sidebar">
+            <h2>Sidebar</h2>
+            <p>This is the left sidebar section for menu or extra content.</p>
+        </aside>
+
+        <main class="main">
+            <h2>Main Content</h2>
+            <p>This section shows the main content of the page.</p>
+
+            <div class="cards">
+                <div class="card">
+                    <h3>Card 1</h3>
+                    <p>Flexbox card layout example.</p>
+                </div>
+
+                <div class="card">
+                    <h3>Card 2</h3>
+                    <p>Responsive and clean design.</p>
+                </div>
+
+                <div class="card">
+                    <h3>Card 3</h3>
+                    <p>Typography with fluid sizing.</p>
+                </div>
+            </div>
+        </main>
+
+        <aside class="aside">
+            <h2>Aside</h2>
+            <p>This is the right aside section for advertisements or widgets.</p>
+        </aside>
+
+        <footer class="footer">
+            <p>© 2026 My Website | All Rights Reserved</p>
+        </footer>
+
+    </div>
+
+</body>
+</html>
