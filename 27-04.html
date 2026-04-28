@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">    
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Time Difference in Minutes</title>
+<style>
+.wrp{
+    display: grid;
+    grid-template-columns: repeat(4, 2fr);
+    grid-auto-rows: minmax(100px auto);
+    grid-gap: 1em;
+}
+.wrp >div{
+    background-color: rgb(211, 213, 214);
+}
+.wrp >div:nth-child(even){
+    background: gray;
+}
+
+/* Q1: Basic 3-column grid */
+.grid-container {
+    /* Enable grid */
+    display: grid;
+    /* 3 equal columns */
+    grid-template-columns: repeat(3, 1fr);
+    /* Gap between items */
+    gap: 20px;
+}
+
+/* Q2: Responsive grid with auto-fit */
+.responsive-grid {
+    display: grid;
+    
+    /* Responsive columns - min 250px, max 1fr */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+
+    /* Gap */
+    gap: 20px;
+}
+
+/* Q3: Holy Grail with grid-template-areas */
+.layout {
+    display: grid;
+    min-height: 100vh;
+    gap: 10px;
+    
+    /* Define areas: header, sidebar/main/aside, footer */
+    grid-template-areas:
+        "header header header"
+        "sidebar main aside"
+        "footer footer footer";
+    
+    /* Column widths */
+    grid-template-columns: 200px 1fr 200px;
+    
+    /* Row heights */
+    grid-template-rows: auto 1fr auto;
+}
+
+
+/* Q4: Spanning grid item */
+.featured-item {
+    /* Span 2 columns */
+    grid-column: span 2;
+    /* Span 2 rows */
+    grid-row: span 2;
+    /* Styling */
+    background: #3498db;
+    padding: 20px;
+}
+
+/* Q5: Fixed sidebars, flexible center */
+.sidebar-layout {
+    display: grid;
+    
+    /* Columns: fixed 250px, flexible, fixed 250px */
+    grid-template-columns: 250px 1fr 250px;
+    /* Minimum height */
+    min-height: 500px;
+    /* Gap */
+    gap: 15px;
+}
+
+/* Task 3: Assign items to areas */
+.header {
+    grid-area: header;
+    background: #3498db;
+    padding: 20px;
+}
+
+.sidebar {
+    
+    background: #2ecc71;
+    padding: 20px;
+    grid-area: sidebar;
+}
+
+.main {
+    
+    background: #ecf0f1;
+    padding: 20px;
+    grid-area: main;
+}
+
+.aside {
+    
+    background: #e74c3c;
+    padding: 20px;
+    grid-area: aside;
+}
+
+.footer {
+    
+    background: #9b59b6;
+    padding: 20px;
+    grid-area: footer ;
+}
+
+/* Task 5: Magazine Layout */
+.magazine-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: 200px;
+    gap: 15px;
+}
+
+.featured {
+    /* Span 2 columns */
+    grid-column: span2;
+    /* Span 2 rows */
+    grid-row: span2;
+    background: #3498db;
+}
+
+.article {
+    background: #ecf0f1;
+    padding: 15px;
+}
+
+/* Task 6: Centered Grid Items */
+.centered-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: 150px;
+    gap: 20px;
+    
+    /* Center items in cells */
+    place-items: center;
+    gap: 20px;
+    grid-template-columns: repeat(3, 1fr);
+    height: 150px;
+    
+}
+
+.centered-grid > * {
+    background: #3498db;
+    padding: 20px;
+    color: white;
+}
+
+
+
+
+</style>
+</head>
+<body>
+    <div class="wrp">
+<div>wrp 1</div>
+<div>wrp 2</div>
+<div>wrp 3 Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis dolor delectus id tenetur quae. Quod quidem, quibusdam, numquam ullam temporibus cumque eligendi at a vel ipsam nostrum repellendus vitae commodi.</div>
+<div>wrp 4</div>
+<div>wrp 5 </div>
+<div>wrp 6</div>
+<div>wrp 7</div>
+<div>wrp 8</div>
+<div>wrp 9</div>
+</div>
+</body>
+</html>
