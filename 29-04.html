@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background: conic-gradient(lightblue, white, rgb(218, 223, 214), lightblue);
+            padding: 20px;
+        }
+
+h1 {
+    margin-bottom: 30px;
+}
+
+.box {
+    width: 200px;
+    height: 60px;
+    line-height: 60px;
+    margin: 20px auto;
+    background: #3498db;
+    color: white;
+    border-radius: 10px;
+    font-weight: bold;
+}
+
+/* 1. Fade In */
+.fade-in {
+    animation: fadeIn 2s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* 2. Bounce */
+.bounce {
+    animation: bounce 1s infinite;
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+/* 3. Spinner */
+.spinner {
+    width: 60px;
+    height: 60px;
+    border: 6px solid #ddd;
+    border-top: 6px solid #e74c3c;
+    border-radius: 50%;
+    margin: 20px auto;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* 4. Pulse */
+.pulse {
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* 5. Slide In */
+.slide-in {
+    animation: slideIn 2s ease-out;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(-300px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* 6. Shake */
+.shake {
+    animation: shake 0.5s infinite;
+}
+
+@keyframes shake {
+    0%, 100% {
+        transform: translateX(0);
+    }
+    25% {
+        transform: translateX(-10px);
+    }
+    75% {
+        transform: translateX(10px);
+    }
+}
+
+/* 7. Progress Bar */
+.progress-container {
+    width: 300px;
+    height: 30px;
+    background: #141111;
+    border-radius: 20px;
+    margin: 20px auto;
+    overflow: hidden;
+}
+
+.progress-bar {
+    width: 0;
+    height: 100%;
+    background: #2ecc71;
+    animation: progress 4s forwards;
+    animation-iteration-count: infinite;
+}
+
+@keyframes progress {
+    from {
+        width: 0;
+        background-color: #fff;
+    }
+    33% {
+        width: 33%;
+        background-color: #b2e756;
+    }
+    66% {
+        width: 66%;
+        background-color: #568203;
+    }
+    to {
+        width: 100%;
+        background-color: #27ae60;
+    }
+}
+
+/* 8. Animation Fill Mode */
+.fill-mode {
+    animation: moveRight 2s forwards;
+}
+
+@keyframes moveRight {
+    from {
+        transform: translateX(0);
+    }
+    33% {
+        transform: translateX(50px);
+    }
+    66% {
+        transform: translateX(100px);
+    }
+    to {
+        transform: translateX(150px);
+    }
+}
+
+/* 9. Animation Direction */
+.direction {
+    animation: colorChange 2s infinite alternate;
+}
+
+@keyframes colorChange {
+    from {
+        background: #9b59b6;
+    }
+    25% {
+        background: #e74c3c;
+    }
+    50% {
+        background: #3498db;
+    }
+    to {
+        background: #f39c12;
+    }
+}
+
+/* 10. Animation Play State */
+.play-state {
+    animation: rotateBox 2s linear infinite;
+}
+
+.play-state:hover {
+    animation-play-state: paused;
+}
+
+@keyframes rotateBox {
+    from {
+        transform: rotate(0deg);
+        color: yellow;
+    }
+    to {
+        transform: rotate(90deg);
+        color: white;
+    }
+}
+    </style>
+</head>
+<body>
+    <h1>CSS Animation Practice</h1>
+
+    <!-- Fade In -->
+    <div class="box fade-in">Fade In</div>
+
+    <!-- Bounce -->
+    <div class="box bounce">Bounce</div>
+
+    <!-- Spinner -->
+    <div class="spinner"></div>
+
+    <!-- Pulse -->
+    <div class="box pulse">Pulse</div>
+
+    <!-- Slide In -->
+    <div class="box slide-in">Slide In</div>
+
+    <!-- Shake -->
+    <div class="box shake">Shake</div>
+
+    <!-- Progress Bar -->
+    <div class="progress-container">
+        <div class="progress-bar"></div>
+    </div>
+
+    <!-- Animation Fill Mode -->
+    <div class="box fill-mode">Fill Mode</div>
+
+    <!-- Animation Direction -->
+    <div class="box direction">Direction</div>
+
+    <!-- Animation Play State -->
+    <div class="box play-state">Hover Me</div>
+</body>
+</html>
